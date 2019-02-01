@@ -1,5 +1,8 @@
 const { exec } = require('child_process');
+const chalk = require('chalk');
 var inquirer = require('inquirer');
+
+const log = console.log
 
 var questions = [
   {
@@ -58,13 +61,14 @@ inquirer.prompt(questions).then(answers => {
   console.log(JSON.stringify(answers, null, '  '));
 
   if(doYouLikeHim && howMuchDoYouLikeHim === 10 && size === "Enorme"){
-    console.log("tutte risposte esatte");
+    log(chalk.blue("tutte risposte esatte"))
     exec("npm install react")
-    console.log("installato react")
+    log(chalk.green("installato react"))
     return 
   }
   
   exec("npm install jquery") 
-  console.log('risposte brutte');
-  console.log("installato jquery")
+  log(chalk.red("tutte risposte brutte"))
+  exec("npm install jquery")
+  log(chalk.red("installato jquery"))
 }); 
