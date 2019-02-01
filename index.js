@@ -60,7 +60,7 @@ inquirer.prompt(questions).then(answers => {
 
   console.log(JSON.stringify(answers, null, '  '));
 
-  if(doYouLikeHim && howMuchDoYouLikeHim === 10 && size === "Enorme"){
+  if(doYouLikeHim && howMuchDoYouLikeHim === "10" && size === "Enorme"){
     log(chalk.blue("tutte risposte esatte"))
     exec("npm install react")
     log(chalk.green("installato react"))
